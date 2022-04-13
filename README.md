@@ -47,7 +47,7 @@ Java backend server should be running at localhost:8080
 ## API endpoints
 
 URL for API: https://pacific-plains-35782.herokuapp.com  
-Endpoint: / - default endpoint, used for checking if API is online 
+Endpoint: / - default endpoint, used for checking if API is online  
 /getburgervenues?location=Tartu - API call that returns fsq_id, name, picture of the burger joints in a location.
   
 ## Known issues
