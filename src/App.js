@@ -24,7 +24,7 @@ function App() {
     <>
       <h1>Welcome to the Burger Finder</h1>
       <p>Your chosen location is:</p>
-      <input type="text" className='burgerInput' placeholder="Tartu, Tallinn, Rome etc.." value={location} onChange={({ target: { value } }) => { setLocation(value) }} />
+      <input type="text" className='burgerInput' placeholder="Tartu, Tallinn, Tokyo etc.." value={location} onChange={({ target: { value } }) => { setLocation(value) }} />
       <button onClick={async () => {
         setIsLoading(true)
         console.log("should be loading now")
