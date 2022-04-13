@@ -1,29 +1,40 @@
 import { useState } from 'react'
 import axios from 'axios'
+import LoadingSpinner from './components/spinner';
 
 import BurgerDisplayComponent from "./components/BurgerDisplayComponent";
 
-
-const findBurgur = (location) => axios.get(`https://pacific-plains-35782.herokuapp.com/getburgervenues?location=${location}`)
 //http://localhost:8080/getburgervenues?location=${location}
 
-
 function App() {
-  const [location, setLocation] = useState('Tartu')
+  const [location, setLocation] = useState('')
   const [burgerVenues, setBurgerVenues] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  const findBurgur = (location) => {
+    setIsLoading(true)
+    console.log("should be loading now")
+    let data = axios.get(`http://localhost:8080/getburgervenues?location=${location}`)
+    setIsLoading(false)
+    return data;
+  }
+ 
 
   return (
     <>
       <h1>Welcome to the Burger Finder</h1>
       <p>Your chosen location is:</p>
-      <input type="text" className='burgerInput' value={location} onChange={({ target: { value } }) => { setLocation(value) }} />
-      <button value="Serch de matrix" onClick={async () => {
-        const { data } = await findBurgur(location);
+      <input type="text" className='burgerInput' placeholder="Tartu, Tallinn, Rome etc.." value={location} onChange={({ target: { value } }) => { setLocation(value) }} />
+      <button onClick={async () => {
+        setIsLoading(true)
+        console.log("should be loading now")
+        const {data} = await axios.get(`http://localhost:8080/getburgervenues?location=${location}`)
+        setIsLoading(false)
         console.log(data)
         setBurgerVenues(data)
-      }} >Click me daddy UwU</button>
+      }} disabled={isLoading || location.length < 2}>Search</button>  
       <div className='container'>
-        {burgerVenues.map(({ fsq_id, name, picture }) => <BurgerDisplayComponent key={fsq_id} name={name} imgUrl={picture} />, [])}
+      {isLoading ? <LoadingSpinner /> : burgerVenues.map(({ fsq_id, name, picture }) => <BurgerDisplayComponent key={fsq_id} name={name} imgUrl={picture} />, [])}
       </div>
     </>
   );
