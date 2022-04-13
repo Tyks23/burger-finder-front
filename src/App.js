@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 import LoadingSpinner from './components/spinner';
-
 import BurgerDisplayComponent from "./components/BurgerDisplayComponent";
 
-//http://localhost:8080/getburgervenues?location=${location}
 
 function App() {
   const [location, setLocation] = useState('')
@@ -28,7 +26,7 @@ function App() {
       <button onClick={async () => {
         setIsLoading(true)
         console.log("should be loading now")
-        const {data} = await axios.get(`http://localhost:8080/getburgervenues?location=${location}`)
+        const {data} = await axios.get(`https://pacific-plains-35782.herokuapp.com/getburgervenues?location=${location}`)
         setIsLoading(false)
         console.log(data)
         setBurgerVenues(data)
