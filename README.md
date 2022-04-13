@@ -1,6 +1,14 @@
 # Burger Finder webapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues and related data and the Qminder Burger API to process that data for fresh burger images.
+
+## Functionality
+
+The Burger Finder allows the user to input a location and the webapp will return a list of burger joints relating that location.  
+The API is currently set to return a maximum of 15 results to ease up on the server.(Also the current main goal of this webapp is to locate venues in Tartu, which only has 12 venues)  
+The webapp returns the names of burger joints and then most recent image relating to the venue.  
+If the API is unable to detect any burger images relating to the venue, it adds a placeholder image.
+Each search should take about 10s.
 
 ## Stack
 
@@ -12,6 +20,8 @@ Java Spring
 -gson
 
 ## Dev environment
+
+
 
 ### React frontend
 -requires NodeJs to be installed
@@ -34,15 +44,17 @@ Java backend server should be running at localhost:8080
 ## API endpoints
 
 URL for API: https://pacific-plains-35782.herokuapp.com  
-Endpoint: /getburgervenues?location=<location>
+Endpoint: /getburgervenues?location="Tartu"
   
 ## Known issues
  
-  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku.
+  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. This APi shutdown results in an infinite loading wheel.
+  
   
 ## Out of scope improvements
   
   1) Asynchronicity to run API calls on multiple threads for a faster process
   2) More precise exception/error handling 
+  3) Adding further functionality to the burger finder e.g customizable paramaters for queries.
     
 
