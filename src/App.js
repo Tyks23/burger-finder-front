@@ -14,7 +14,7 @@ function App() {
   const findBurgur = (location) => {
     setIsLoading(true)
     console.log("should be loading now")
-    let data = axios.get(`http://localhost:8080/getburgervenues?location=${location}`)
+    let data = axios.get(`https://pacific-plains-35782.herokuapp.com/getburgervenues?location=${location}`)
     setIsLoading(false)
     return data;
   }
