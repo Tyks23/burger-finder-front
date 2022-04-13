@@ -7,7 +7,7 @@ URL: https://area-burger-finder.herokuapp.com/
 ## Functionality
 
 The Burger Finder allows the user to input a location and the webapp will return a list of burger joints relating that location.  
-The API is currently set to return a maximum of 15 results to ease up on the server.(Also the current main goal of this webapp is to locate venues in Tartu, which only has 12 venues)  
+The API is currently set to return a maximum of 15 results to ease up on the server.(Also the current main goal of this webapp is to locate venues in Tartu, which only has 12 venues according to the API)  
 The webapp returns the names of burger joints and then most recent image relating to the venue.  
 If the API is unable to detect any burger images relating to the venue, it adds a placeholder image.
 Each search should take about 10s.
