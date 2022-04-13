@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Stack
 
-ReactJS
+ReactJS  
 -axios
 
-Java Spring
--okhttp3
+Java Spring  
+-okhttp3  
 -gson
 
 ## Dev environment
@@ -33,7 +33,7 @@ Java backend server should be running at localhost:8080
 
 ## API endpoints
 
-URL for API: https://pacific-plains-35782.herokuapp.com
+URL for API: https://pacific-plains-35782.herokuapp.com  
 Endpoint: /getburgervenues?location=<location>
   
 ## Known issues
