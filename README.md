@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Burger Finder webapp
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+ReactJS
+-axios
 
-### `npm start`
+Java Spring
+-okhttp3
+-gson
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dev environment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### React frontend
+-requires NodeJs to be installed
 
-### `npm test`
+1) navigate to burgerfinderfront2 directory in your chosen cli that supports node
+2) npm install
+3) npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React dev server should be running on localhost:3000
 
-### `npm run build`
+### Java backend
+-requires JRE to be installed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Intellj
+1) open BurgerFinder directory in Intellij
+2) run BurgerFinder\BurgerFinder\src\main\java\com\burger\burgerbackend.java
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Java backend server should be running at localhost:8080
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API endpoints
 
-### `npm run eject`
+URL for API: https://pacific-plains-35782.herokuapp.com
+Endpoint: /getburgervenues?location=<location>
+  
+## Known issues
+ 
+  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku.
+  
+## Out of scope improvements
+  
+  1) Asynchronicity to run API calls on multiple threads for a faster process
+  2) More precise exception/error handling 
+    
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
