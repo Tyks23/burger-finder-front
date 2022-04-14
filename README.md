@@ -27,7 +27,7 @@ Java Spring
 ## Dev environment
 
 ### Emergency setup
-**WARNING! This process involves using a personal API key and an unsecured web brower**
+**WARNING! This process involves using a personal API key and an unsecured web brower**  
 After succesfully running both the frontend and the backend servers, the steps are as follows:  
 1) Get an API key from Foursquare by following this guide https://developer.foursquare.com/docs/manage-api-keys
 2) Inserting the API key into 'BurgerFinder\src\main\java\api\BurgerController.java' file into the 'apiKey' variable.
