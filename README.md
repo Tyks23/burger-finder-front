@@ -62,7 +62,7 @@ Endpoint: / - default endpoint, used for checking if API is online
   
 ## Known issues
  
-  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. This APi shutdown results in an infinite loading wheel. The only fix for this is to wait awhile for the backend to regain function independently.
+  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. The only fix for this is to wait awhile for the backend to regain function independently.
   
   
 ## Out of scope improvements
