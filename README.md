@@ -26,7 +26,14 @@ Java Spring
 
 ## Dev environment
 
-
+### Emergency setup
+**WARNING! This process involves using a personal API key and an unsecured web brower**
+After succesfully running both the frontend and the backend servers, the steps are as follows:  
+1) Get an API key from Foursquare by following this guide https://developer.foursquare.com/docs/manage-api-keys
+2) Inserting the API key into 'BurgerFinder\src\main\java\api\BurgerController.java' file into the 'apiKey' variable.
+3) Re-run the java server(Shift + F10)
+4) Open a CORS free chrome browser with the following command in Run: chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+5) navigate to localhost:3000 in the unsecured browser
 
 ### React frontend
 -requires NodeJs to be installed
@@ -42,8 +49,8 @@ Github for backend repo: https://github.com/Tyks23/burger-finder-back/tree/main
 -requires JRE to be installed
 
 #### Intellj
-1) open BurgerFinder directory in Intellij
-2) run BurgerFinder\BurgerFinder\src\main\java\com\burger\burgerbackend.java
+1) open Burgerfinder/BurgerFinder directory in Intellij
+2) run *\src\main\java\com\burger\burgerbackend.java
 
 Java backend server should be running at localhost:8080
 
