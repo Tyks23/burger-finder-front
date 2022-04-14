@@ -1,6 +1,6 @@
 # Burger Finder webapp
 
-🔴**NOTICE!! While implementing some fixes I managed to completely Wreck the webapp, rendering Heroku useless and breaking CORS.  Therefore the currently the only way to run the webapp is explained in the 'Dev environment' section!!   Sorry for this inconvenience I will attempt to fix it ASAP.**🔴  
+**NOTICE!! While implementing some fixes I managed to completely Wreck the webapp, rendering Heroku useless and breaking CORS.  Therefore the currently the only way to run the webapp is explained in the 'Dev environment' section!!   Sorry for this inconvenience I will attempt to fix it ASAP.**  
 
 The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues and related data and the Qminder Burger API to process that data for fresh burger images.  
 
