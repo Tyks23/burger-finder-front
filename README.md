@@ -38,7 +38,7 @@ After succesfully running both the frontend and the backend servers, the steps a
 ### React frontend
 -requires NodeJs to be installed
 
-1) navigate to burgerfinderfront2 directory in your chosen cli that supports node
+1) navigate to the directory in your chosen cli that supports node
 2) npm install
 3) npm start
 
@@ -49,7 +49,7 @@ Github for backend repo: https://github.com/Tyks23/burger-finder-back/tree/main
 -requires JRE to be installed
 
 #### Intellj
-1) open Burgerfinder/BurgerFinder directory in Intellij
+1) open the directory in Intellij
 2) run *\src\main\java\com\burger\burgerbackend.java
 
 Java backend server should be running at localhost:8080
