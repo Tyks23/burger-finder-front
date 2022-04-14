@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Burger Finder webapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**NOTICE!! While implementing some fixes I managed to completely Wreck the webapp, rendering Heroku useless and breaking CORS.  Therefore the currently the only way to run the webapp is explained in the 'Dev environment' section!!   Sorry for this inconvenience I will attempt to fix it ASAP.**  
 
-## Available Scripts
+The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues and related data and the Qminder Burger API to process that data for fresh burger images.  
 
-In the project directory, you can run:
+URL: https://area-burger-finder.herokuapp.com/  
+Backend Repo: https://github.com/Tyks23/burger-finder-back/tree/main
 
-### `npm start`
+## Functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Burger Finder allows the user to input a location and the webapp will return a list of burger joints relating that location.  
+The API is currently set to return a maximum of 15 results to ease up on the server.(Also the current main goal of this webapp is to locate venues in Tartu, which only has 12 venues according to the API)  
+The webapp returns the names of burger joints and then most recent image relating to the venue.  
+If the API is unable to detect any burger images relating to the venue, it adds a placeholder image.
+Each search should take about 10s.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Stack
 
-### `npm test`
+ReactJS  
+-axios
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Java Spring  
+-okhttp3  
+-gson
 
-### `npm run build`
+## Dev environment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### React frontend
+-requires NodeJs to be installed
 
-### `npm run eject`
+1) navigate to burgerfinderfront2 directory in your chosen cli that supports node
+2) npm install
+3) npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React dev server should be running on localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Java backend
+Github for backend repo: https://github.com/Tyks23/burger-finder-back/tree/main  
+-requires JRE to be installed
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Intellj
+1) open BurgerFinder directory in Intellij
+2) run BurgerFinder\BurgerFinder\src\main\java\com\burger\burgerbackend.java
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Java backend server should be running at localhost:8080
 
-## Learn More
+## API endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+URL for API: https://pacific-plains-35782.herokuapp.com  
+Endpoint: / - default endpoint, used for checking if API is online  
+/getburgervenues?location=Tartu - API call that returns fsq_id, name, picture of the burger joints in a location.
+  
+## Known issues
+ 
+  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. This APi shutdown results in an infinite loading wheel. The only fix for this is to wait awhile for the backend to regain function independently.
+  
+  
+## Out of scope improvements
+  
+  1) Asynchronicity to run API calls on multiple threads for a faster process
+  2) More precise exception/error handling 
+  3) Adding further functionality to the burger finder e.g customizable paramaters for queries.
+    
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
