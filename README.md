@@ -1,6 +1,6 @@
 # Burger Finder webapp
 
-**NOTICE!! While implementing some fixes I managed to completely Wreck the webapp, rendering Heroku useless and breaking CORS.  Therefore the currently the only way to run the webapp is explained in the 'Dev environment' section!!   Sorry for this inconvenience I will attempt to fix it ASAP.**  
+**NOTICE!! While implementing some fixes I managed to completely Wreck the webapp, rendering Heroku useless and breaking CORS.  Therefore currently the only way to run the webapp is explained in the 'Dev environment' section!!   Sorry for this inconvenience I will attempt to fix it ASAP.**  
 
 The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues and related data and the Qminder Burger API to process that data for fresh burger images.  
 
@@ -26,12 +26,19 @@ Java Spring
 
 ## Dev environment
 
-
+### Emergency setup
+**WARNING! This process involves using a personal API key and an unsecured web brower**  
+After succesfully running both the frontend and the backend servers, the steps are as follows:  
+1) Get an API key from Foursquare by following this guide https://developer.foursquare.com/docs/manage-api-keys
+2) Inserting the API key into 'BurgerFinder\src\main\java\api\BurgerController.java' file into the 'apiKey' variable.
+3) Re-run the java server(Shift + F10)
+4) Open a CORS free chrome browser with the following command in Run: chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+5) navigate to localhost:3000 in the unsecured browser
 
 ### React frontend
 -requires NodeJs to be installed
 
-1) navigate to burgerfinderfront2 directory in your chosen cli that supports node
+1) navigate to the directory in your chosen cli that supports node
 2) npm install
 3) npm start
 
@@ -42,8 +49,8 @@ Github for backend repo: https://github.com/Tyks23/burger-finder-back/tree/main
 -requires JRE to be installed
 
 #### Intellj
-1) open BurgerFinder directory in Intellij
-2) run BurgerFinder\BurgerFinder\src\main\java\com\burger\burgerbackend.java
+1) open the directory in Intellij
+2) run *\src\main\java\com\burger\burgerbackend.java
 
 Java backend server should be running at localhost:8080
 
@@ -55,7 +62,7 @@ Endpoint: / - default endpoint, used for checking if API is online
   
 ## Known issues
  
-  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. This APi shutdown results in an infinite loading wheel. The only fix for this is to wait awhile for the backend to regain function independently.
+  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. The only fix for this is to wait awhile for the backend to regain function independently.
   
   
 ## Out of scope improvements
