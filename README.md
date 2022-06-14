@@ -45,7 +45,7 @@ Express dev server should now be running on localhost:8080
 
 ## API endpoints
 
-URL for API: https://burger-finder-backend.herokuapp.com
+URL for API: https://burger-finder-backend.herokuapp.com  
 Endpoint:  
  GET /api/burger/getvenues?location=<location> -  find burger venues in a location  
  POST /api/burger/getvenueimages - find image representing burger venue  
