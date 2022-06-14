@@ -18,18 +18,21 @@ function App() {
       <input type="text" className='burgerInput' placeholder="Tartu, Tallinn, Tokyo etc.." value={location} onChange={({ target: { value } }) => { setLocation(value) }} />
       <button onClick={async () => {
         setIsLoading(true)
-        const {data} = await axios.get(`https://pacific-plains-35782.herokuapp.com/getburgervenues?location=${location}`).catch(function (error) {
+        await axios.get(`http://localhost:8080/api/burger/getvenues?location=${location}`)
+        .then(function (response){
+        setBurgerVenues(response.data.venueList);
+        })
+        .catch(function (error) {
           if (error.response) {
             setIsBroken(true);
             setErrorCode(error.response.status);
           }
         })
         setIsLoading(false)
-        setBurgerVenues(data)
       }} disabled={isLoading || location.length < 2}>Search</button>  
       {isBroken ? "Something Broke: "+errorCode: ""}
       <div className='container'>
-      {isLoading ? <LoadingSpinner /> : burgerVenues.map(({ fsq_id, name, picture }) => <BurgerDisplayComponent key={fsq_id} name={name} imgUrl={picture} />, [])}
+      {burgerVenues.map(({ fsq_id, name }) => <BurgerDisplayComponent key={fsq_id} fsq_id={fsq_id} name={name} />, [])}
       </div>
     </>
   );
