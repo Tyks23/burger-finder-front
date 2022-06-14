@@ -1,10 +1,12 @@
 # Burger Finder webapp
  
 
-The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues for burger venues.  
+The Burger Finder is a webapp that enables the user to displays burger related venues in a specific area. The webapp uses APIs from FourSquare to locate venues for burger venues. 
 
-URL:   
-Backend Repo: 
+**Hosted on free service so initial boot might take awhile**
+
+URL: https://burger-finder-webapp.herokuapp.com/
+Backend Repo: https://github.com/Tyks23/burger-finder-backend
 
 ## Functionality
 
@@ -13,14 +15,12 @@ The webapp returns the names of burger joints and then most relevant image relat
 If the API is unable to detect any burger images relating to the venue, it adds a placeholder image.
 
 ## Stack
-
+Frontend: 
 ReactJS  
-
+Backend: 
 Express
 
 ## Dev environment
-
-
 
 ### React frontend
 -requires NodeJs to be installed
@@ -33,24 +33,22 @@ React dev server should be running on localhost:3000
 
 ### Express backend
 
+-requires NodeJs to be installed 
 
+1) navigate to directory in your chosen cli that supports node 
+2) npm install
+3) cd src 
+4) node app.js 
+
+Express dev server should now be running on localhost:8080
 
 
 ## API endpoints
 
-URL for API: https://pacific-plains-35782.herokuapp.com  
-Endpoint: / - default endpoint, used for checking if API is online  
-/getburgervenues?location=Tartu - API call that returns fsq_id, name, picture of the burger joints in a location.
-  
-## Known issues
- 
-  Sometimes the API seems to go down and starts returning error code 500 when endpoint is called. I believe this is due to some restriction from Heroku. It may also be that my API is unstable in the Heroku environment. The only fix for this is to wait awhile for the backend to regain function independently.
-  
-  
-## Out of scope improvements
-  
-  1) Asynchronicity to run API calls on multiple threads for a faster process
-  2) More precise exception/error handling 
-  3) Adding further functionality to the burger finder e.g customizable paramaters for queries.
-    
+URL for API: https://burger-finder-backend.herokuapp.com
+Endpoint: 
+ GET /api/burger/getvenues?location=<location> -  find burger venues in a location 
+ POST /api/burger/getvenueimages - find image representing burger venue
+
+
 
