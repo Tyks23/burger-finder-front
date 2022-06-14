@@ -19,7 +19,7 @@ function App() {
       <button onClick={async () => {
         setIsBroken(false);
         setIsLoading(true)
-        await axios.get(`http://localhost:8080/api/burger/getvenues?location=${location.current}`)
+        await axios.get(`https://burger-finder-backend.herokuapp.com/api/burger/getvenues?location=${location.current}`)
         .then(function (response){
         setBurgerVenues(response.data.venueList);
 

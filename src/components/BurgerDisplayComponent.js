@@ -5,7 +5,7 @@ export default function BurgerDisplayComponent({ fsq_id, name }) {
 
   const [imgUrl, setImgUrl] = useState('');
 
-  axios.post('http://localhost:8080/api/burger/getvenueimages', {
+  axios.post('https://burger-finder-backend.herokuapp.com/api/burger/getvenueimages', {
     fsq_id: fsq_id
   })
     .then(function (response) {
