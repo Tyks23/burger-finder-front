@@ -5,16 +5,15 @@ export default function BurgerDisplayComponent({ fsq_id, name }) {
 
   const [imgUrl, setImgUrl] = useState('');
 
-  console.log(fsq_id);
   axios.post('http://localhost:8080/api/burger/getvenueimages', {
     fsq_id: fsq_id
   })
     .then(function (response) {
       setImgUrl(response.data)
-      console.log(response);
+      //console.log(response);
     })
     .catch(function (error) {
-      console.log(error);
+      //console.log(error);
     });
 
 
